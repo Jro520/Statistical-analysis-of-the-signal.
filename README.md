@@ -1,5 +1,5 @@
 # Análisis estadístico de la señal.
-Este proyecto tiene como objetivo entender cómo realizar un análisis estadístico de una señal fisiológica utilizando dos métodos: con funciones predefinidas y con funciones no predefinidas. También se utilizaron tres tipos de ruido para contaminar la señal, y se calculó la relación señal-ruido (SNR) de estos dos.
+Este proyecto tiene como objetivo entender cómo realizar un análisis estadístico de una señal fisiológica de fonocardiografia (PCG), una adquision de datos realizada a diferentes mujeres embarazadas entre la semana 31 y 40. Esto utilizando dos métodos: con funciones predefinidas y con funciones no predefinidas. También se utilizaron tres tipos de ruido para contaminar la señal, y se calculó la relación señal-ruido (SNR) de estos dos.
 # librerias que vamos a usar
     import wfdb
 	import matplotlib.pyplot as plt
@@ -181,7 +181,9 @@ plt.grid(True)
 plt.show()
 ````
 # Contaminacion de la señal
-En esta seccion contaminaremos la señal con tres tipos de ruido y calcularemos la SNR de esto
+En esta seccion contaminaremos la señal con tres tipos de ruido y calcularemos la SNR de estos.
+
+
 ## Generación de Ruido Gaussiano y Cálculo de SNR
 
 ```python
@@ -335,4 +337,20 @@ plt.show()
 ```
 ![Figure 2024-08-08 072227 (9)](https://github.com/user-attachments/assets/6be0e016-2f47-4735-90e3-38c6a0e4f41d)
 ![Figure 2024-08-08 072227 (10)](https://github.com/user-attachments/assets/810f464a-cb5c-462c-94d9-190e67f5fba0)
+
+
+# Concluciones
+los resultados fueron los siguientes:
+
+La relación señal a ruido (SNR) con el ruido gaussiano es:  -4.449661096297176
+
+En la primera parte nos encotramos con una SNR negativo, lo que nos indica que hay un alto indice de interferencia con respecto señal original.
+
+La relación señal a ruido (SNR) con ruido de impulso es:  -0.09467968441295271
+
+En la segunda parte nos encotramos con una SNR negativo, lo que indica que hay un indice de interferencia mayor al de la señal sin embargo es menor con respecto.
+
+La relación señal a ruido (SNR) con ruido tipo artefacto es:  3.0124638441996927
+
+En la tercera parte nos encotramos con una SNR positivo, lo que significa que hay un bajo indice de interferencia con respecto a la señal original.
 
