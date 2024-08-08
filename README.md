@@ -46,7 +46,7 @@ media = suma / len(valores)
 # Imprimimos el resultado de la media
 print("La media es: ", media
 ````
-## Cálculo de la media de una señal
+## Cálculo de la desviación estandar de una señal
 
 Este código muestra cómo calcular la desviacion estandar de una señal en un array bidimensional.
 ```python
