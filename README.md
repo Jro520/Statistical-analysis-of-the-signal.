@@ -142,7 +142,44 @@ plt.show()
 
 ![Figure 2024-08-08 072227 (2)](https://github.com/user-attachments/assets/d9310512-0b92-4249-a1a0-211ff52a54d7)
 
+## Cálculo de Estadístico usando funciones predefinidas
 
+```python
+# Calcular la media
+media2 = statistics.mean(valores_a_planar)
+
+# Calcular la desviación estándar
+desE = statistics.stdev(valores_a_planar)  # Para la desviación estándar muestral
+
+# Calcular el coeficiente de variación
+coeficienteV = (desE / media2) * 100
+
+print("La media es: ", media2)
+print("La desviación estándar es: ", desE)
+print("El coeficiente de variación es: ", coeficienteV)
+
+# Graficar un histograma
+plt.figure(figsize=(10, 6))
+plt.hist(valores_a_planar, bins=30, edgecolor='black')
+plt.title('Histograma de Valores')
+plt.xlabel('Valor')
+plt.ylabel('Frecuencia')
+plt.grid(True)
+plt.show()
+
+# Graficar la función de probabilidad 
+num_bins = 30
+frecuencias, bins = np.histogram(valores, bins=num_bins)
+probabilidades = frecuencias / np.sum(frecuencias)  # Calcular probabilidades
+
+plt.figure(figsize=(10, 6))
+plt.bar(bins[:-1], probabilidades, width=(bins[1] - bins[0]), edgecolor='black')
+plt.title('Función de Probabilidad de la Señal')
+plt.xlabel('Valor')
+plt.ylabel('Probabilidad')
+plt.grid(True)
+plt.show()
+````
 # Contaminacion de la señal
 En esta seccion contaminaremos la señal con tres tipos de ruido y calcularemos la SNR de esto
 ## Generación de Ruido Gaussiano y Cálculo de SNR
